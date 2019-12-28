@@ -7,7 +7,11 @@ app.get('/', function(req, res){
 })
 
 app.get('/css/:cssFile', function(req, res){
-	res.sendFile(path.join(__dirname + '/' + req.params.cssFile))
+	res.sendFile(path.join(__dirname,'css',req.params.cssFile))
+})
+
+app.get('/js/:cssFile', function(req, res){
+	res.sendFile(path.join(__dirname,'js',req.params.cssFile))
 })
 
 app.listen(3000)
