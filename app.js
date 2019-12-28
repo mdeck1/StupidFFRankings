@@ -1,8 +1,13 @@
 const express = require('express');
 const app = new express();
+var path = require('path');
 
 app.get('/', function(req, res){
-	res.sendFile('C:\\Users\\malco\\StupidFFRankings\\index.html')
+	res.sendFile(path.join(__dirname + '/index.html'))
+})
+
+app.get('/css/:cssFile', function(req, res){
+	res.sendFile(path.join(__dirname + '/' + req.params.cssFile))
 })
 
 app.listen(3000)
