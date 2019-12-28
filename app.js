@@ -7,11 +7,18 @@ app.get('/', function(req, res){
 })
 
 app.get('/css/:cssFile', function(req, res){
+	console.log(req.params.cssFile)
 	res.sendFile(path.join(__dirname,'css',req.params.cssFile))
 })
 
-app.get('/js/:cssFile', function(req, res){
-	res.sendFile(path.join(__dirname,'js',req.params.cssFile))
+app.get('/js/:jsFile', function(req, res){
+	console.log(req.params.jsFile)
+	res.sendFile(path.join(__dirname,'js',req.params.jsFile))
+})
+
+app.get('/node_modules/:nodeModule', function(req, res){
+	console.log(req.params.nodeModule)
+	res.sendFile(path.join(__dirname,'node_modules',nodeModule));
 })
 
 app.listen(3000)
